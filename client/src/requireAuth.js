@@ -9,7 +9,6 @@ export default (ChildComponent)=>{
 
         componentDidMount = () => {
             this.isAuthenticated();
-           
         }
 
         componentDidUpdate() {
@@ -31,9 +30,9 @@ export default (ChildComponent)=>{
     }
 
     let mapStateToProps = (state) => {
-       return{
-           auth: state.auth.authenticated
-       }
+        return{
+            auth: state.auth.authenticated
+        }
     }
     
     return connect(mapStateToProps, null)(ComposedComponent)
