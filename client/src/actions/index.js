@@ -1,13 +1,7 @@
 import axios from 'axios'
-   // email, password
+    // email, password
     // send to our server
     // server send back jwt
-
-    // return {
-    //     type: "AUTH_USER",
-    //     payload: data
-    // }
-
 
 export const signup = (formProps, callback) =>  async dispatch => {
         try{
@@ -26,9 +20,6 @@ export const signup = (formProps, callback) =>  async dispatch => {
             dispatch({type: "AUTH_ERROR", payload: "email is in use"})
         }
     }
-  
-
-
 
 export const signin = (formProps, callback) => {
     // login
@@ -47,10 +38,6 @@ export const signin = (formProps, callback) => {
             dispatch({type: "AUTH_ERROR", payload: "Invalid login credentials"})
         }
     }
-    // return{
-    //     type: "AUTH_USER",
-    //     payload: data
-    // }
 
 }
 
@@ -60,7 +47,6 @@ export const signout = () => {
     return {
         type: "AUTH_USER",
         payload: ''
-        
     }
 
 }

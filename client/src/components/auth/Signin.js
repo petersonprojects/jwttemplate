@@ -10,15 +10,11 @@ class Signin extends React.Component {
     onSubmit = (formProps) => {
         //call our action creator
         // navigate to a protected page
-      console.log(formProps)
-      this.props.signin(formProps, ()=>{
-          this.props.history.push('/feature');
-      })
+        console.log(formProps)
+        this.props.signin(formProps, ()=>{
+            this.props.history.push('/feature');
+        })
     }
-    
-    // handleSubmit = (formProps) => {
-    //     console.log(formProps)
-    // }
 
     render() {
         const {handleSubmit} = this.props // coming from redux forms
@@ -51,22 +47,17 @@ class Signin extends React.Component {
                 <div>{this.props.errorMessage}</div>
 
                 <button>Sign In</button>
-
-
             </form>
         );
     }
 }
 
 let mapStateToProps = (state) => {
-  return{
-      errorMessage: state.auth.errorMessage
-  }
+    return{
+        errorMessage: state.auth.errorMessage
+    }
 }
 
-
-export default compose(connect(mapStateToProps, actions),
-reduxForm({form: 'signin'})
-)(Signin)
+export default compose(connect(mapStateToProps, actions), reduxForm({form: 'signin'}))(Signin)
 
 

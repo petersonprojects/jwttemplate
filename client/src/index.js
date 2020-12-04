@@ -22,8 +22,6 @@ import Signup from './components/auth/Signup';
 
 import reducers from './reducers';
 
-import App from './App';
-
 let store = createStore(reducers, {
     auth: {
       authenticated: localStorage.getItem('token')
@@ -33,44 +31,19 @@ let store = createStore(reducers, {
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 )
 
-ReactDOM.render( <
-  Provider store = {
-    store
-  } >
-  <
-  BrowserRouter >
+ReactDOM.render( 
+  <Provider store={store}>
 
+    <BrowserRouter>
 
-  <
-  Route exact path = '/'
-  component = {
-    Welcome
-  }
-  /> <
-  Route path = '/signup'
-  component = {
-    Signup
-  }
-  /> <
-  Route path = '/feature'
-  component = {
-    Feature
-  }
-  /> <
-  Route path = '/signout'
-  component = {
-    Signout
-  }
-  /> <
-  Route path = '/signin'
-  component = {
-    Signin
-  }
-  />
+      <Route exact path = '/' component = {Welcome}/> 
+      <Route path = '/signup' component = {Signup}/>
+      <Route path = '/feature' component = {Feature}/>
+      <Route path = '/signout' component = {Signout}/>
+      <Route path = '/signin' component = {Signin}/>
 
+    </BrowserRouter> 
 
-  <
-  /BrowserRouter> <
-  /Provider>,
+  </Provider>,
   document.getElementById('root')
 );

@@ -21,8 +21,7 @@ let auth = (state = init_state, action) => {
         default:
             return state
     }
-
-    return state
+    
 }
 
 
