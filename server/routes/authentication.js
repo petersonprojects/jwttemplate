@@ -11,7 +11,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: false}));
 
 let passport = require('passport');
-let passportService = require('../config/passAuth');
+require('../config/passAuth');
 
 let requireSignin = passport.authenticate('local', {session: false});
 let requireAuth = passport.authenticate('jwt', {session: false});
